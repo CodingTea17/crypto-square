@@ -11,8 +11,8 @@ function encoder(unencoded){
     height = Math.sqrt(length);
     width = Math.sqrt(length);
   } else{
-    width = Math.ceil(Math.sqrt(length));
-    height = Math.floor(Math.sqrt(length));
+    height = Math.ceil(Math.sqrt(length));
+    width = Math.floor(Math.sqrt(length));
   }
   for(var i = 0;i < height; i++){
     unencodedMatrix[i] = [];
@@ -35,6 +35,8 @@ function encoder(unencoded){
         counter = 0;
         codedArray.push(tempString);
         tempString = "";
+        tempString = tempString + unencodedMatrix[j][i];
+        counter += 1;
         // console.log(" ");
       } else if ((i === (width - 1)) && (j === (height - 1))){
         codedArray.push(tempString);
